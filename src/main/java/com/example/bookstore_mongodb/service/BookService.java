@@ -25,10 +25,7 @@ public class BookService {
     }
 
     // Remove a book
-    public Book deleteBook(String id) {
-        Book book = bookRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Book not found with id: " + id));
+    public void deleteBook(String id) {
         bookRepository.deleteById(id);
-        return book;
     }
 }
